@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Lo mejor Artesanal</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<style>
+            /* Estilo para la ventana modal0 de imagen */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1;
+                padding-top: 100px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+            .modal-content {
+                margin: auto;
+                display: block;
+                max-width: 80%;
+                max-height: 80%;
+            }
+            #caption {
+                text-align: center;
+                color: rgb(248, 242, 242);
+                font-size: 20px;
+                margin-top: 10px;
+            }
+            .close {
+                position: absolute;
+                top: 15px;
+                right: 35px;
+                color: #fdf9f9;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+            }
+            .close:hover,
+            .close:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+           /* Estilo para la sección de "Sobre nosotros" */
+#about .container {
+    text-align: center; /* Centra el texto y los elementos */
+    padding: 20px; /* Espaciado interno */
+}
+
+#about .image-container {
+    margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+}
+
+#about .image.featured img {
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    height: 200px; /* Fija la altura */
+    object-fit: cover; /* Recorta la imagen para que se ajuste sin distorsión */
+    border-radius: 10px; /* Opcional: bordes redondeados para mejor estética */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera para destacar la imagen */
+}
+
+#about p {
+    text-align: justify; /* Alinea el texto para una mejor lectura */
+    margin: 0 auto; /* Centra el texto horizontalmente */
+    max-width: 800px; /* Limita el ancho del párrafo */
+    line-height: 1.6; /* Espaciado entre líneas para mejorar legibilidad */
+    font-size: 1rem; /* Tamaño de fuente estándar */
+}
+
+            
+
+            .container {
+             color: #2a2929;
+            font-family: 'Roboto Slab', serif; /* Fuente más ancha y bonita */
+            }
+
+            /* Estilo para los íconos de contacto */
+            .contact-icons a {
+                font-size: 30px;
+                margin: 10px;
+                color: #4f4d4d;
+            }
+            .contact{
+				color: #f89d9d;
+				background-color: #fffcfc;
+			}
+            .contact-icons a:hover {
+                color: #f89d9d;
+            }
+        </style>
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+							<h1 id="title"> 
+								Artesanales</h1>
+							<p>Del campo a tu mesa</p>
+						</div>
+
+					<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#top" id="top-link"><span class="icon solid fa-home">Introducción</span></a></li>
+							<li><a href="#history" id="history-link"><span class="icon solid fa-book">Productos</span></a></li>
+							<li><a href="#about" id="about-link"><span class="icon solid fa-user">Historia</span></a></li>
+							<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contacto</span></a></li>
+						</ul>
+					</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+					<ul class="icons">
+						<li>
+							<a href="https://twitter.com/edwinrestrepo" class="icon brands fa-twitter" target="_blank">
+								<span class="label">Twitter</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://facebook.com/edwin.restrepo" class="icon brands fa-facebook-f" target="_blank">
+								<span class="label">Facebook</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://github.com/EdwinRestrepoAtehortua" class="icon brands fa-github" target="_blank">
+								<span class="label">Github</span>
+							</a>
+						</li>
+						<li>
+							<a href="https://dribbble.com/Edwinrestrepo" class="icon brands fa-dribbble" target="_blank">
+								<span class="label">Dribbble</span>
+							</a>
+						</li>
+						<li>
+							<a href="mailto:edwinrestrepo172819@gmail.com" class="icon solid fa-envelope">
+								<span class="label">Email</span>
+							</a>
+						</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt">Bienvenidos a la pagina donde podras encontrar productos artesanales de la mejor calidad, traidos directamente desde el campo</h2>
+								<p>Desde nuestras tierras, los campesinos creamos productos de calidad,<br> como vino, café, miel, jabón de cacao, entre otros. Todos elaborados con esfuerzo y dedicación.</p>
+							</header>
+							<footer>
+								<a href="#about" class="button scrolly">Descubre nuestra historia</a>
+							</footer>
+
+						</div>
+					</section>
+
+					  <!-- Modal de imagen con detalles -->
+					  <div id="modal" class="modal">
+						<span class="close" onclick="closeModal()">&times;</span>
+						<img class="modal-content" id="modal-image" />
+						<div id="caption"></div>
+					</div>
+
+				<!-- Portafolio de Productos -->
+				<section id="history" class="three">
+					<div class="container">
+						<header>
+							<h2>Productos Artesanales</h2>
+						</header>
+						<p>Descubre una variedad de productos hechos a mano que combinan tradición y calidad.</p>
+	
+						<div class="row">
+							<div class="col-4 col-12-mobile">
+								<article class="item">
+									<a href="#!" class="image fit" onclick="openModal('cafe')"><img src="images/cafet.jpg" alt="Café Gourmet" /></a>
+									<header>
+										<h3>Café Orgánico</h3>
+									</header>
+								</article>
+								<article class="item">
+									<a href="#!" class="image fit" onclick="openModal('miel')"><img src="images/mielp.jpg" alt="Miel Natural" /></a>
+									<header>
+										<h3>Miel Natural</h3>
+									</header>
+								</article>
+							</div>
+							<div class="col-4 col-12-mobile">
+								<article class="item">
+									<a href="#!" class="image fit" onclick="openModal('chocolate')"><img src="images/vinoc.png" alt="Vino Artesanal" /></a>
+									<header>
+										<h3>Vino Artesanal</h3>
+									</header>
+								</article>
+								<article class="item">
+									<a href="#!" class="image fit" onclick="openModal('campo')"><img src="images/sana.jpg" alt="Productos de Campo" /></a>
+									<header>
+										<h3>Productos de Campo para calmar dolores</h3>
+									</header>
+								</article>
+							</div>
+							<div class="col-4 col-12-mobile">
+								<article class="item">
+									<a href="#!" class="image fit" onclick="openModal('artesanias')"><img src="images/cafes.jpg" alt="Artesanías Locales" /></a>
+									<header>
+										<h3>Vino Artesanal</h3>
+									</header>
+								</article>
+								<article class="item">
+									<a href="#!" class="image fit" onclick="openModal('decoracion')"><img src="images/jabon.jpg" alt="Decoración Rústica" /></a>
+									<header>
+										<h3>Jabón Artesanal de Cacao</h3>
+									</header>
+								</article>
+							</div>
+						</div>
+	
+					</div>
+				</section>
+				<!-- About Me -->
+<section id="about" class="three">
+    <div class="container">
+
+        <header>
+            <h2>Historia de Angostura y sus productos</h2>
+        </header>
+
+        <div class="image-container">
+            <a href="#" class="image featured">
+                <img src="images/campo.jpg" alt="About me image" />
+            </a>
+        </div>
+
+        <p><h4>Angostura es un pequeño municipio en Antioquia,
+           Colombia, conocido por la dedicación de sus campesinos
+           que cultivan productos naturales con métodos tradicionales.
+           Desde el café de la mejor calidad hasta las mieles y jabones, cada producto refleja el esfuerzo y la pasión por la tierra. En este hermoso lugar, los campesinos luchan por salir adelante,
+           llevando sus productos a todo el país con orgullo.</h4>
+        </p>
+
+    </div>
+</section>
+
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							
+
+							<!-- Contacto -->
+
+							<section id="contact" class="five">
+								<div class="container">
+									<header>
+								<h2>Contacto</h2>
+							</header>
+									<p>Si estás interesado en cualquiera de nuestros productos, no dudes en comunicarte con nosotros:</p>
+									<div class="contact-icons">
+										<a href="mailto:edwinrestrepo172819@gmail.com" class="icon brands fa-google"></a>
+										<a href="https://wa.me/573001055840" class="icon brands fa-whatsapp"></a>
+										<a href="https://facebook.com/edwin.restrepo" class="icon brands fa-facebook-f"></a>
+										<a href="https://instagram.com/restrepoedwin172819" class="icon brands fa-instagram"></a>
+									</div>
+									
+									<p>Para más información, por favor contacta al siguiente número: <strong>+57 3001055840</strong></p>
+								</div>
+							</section>
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+			</div>
+            <!-- Scripts -->
+        <script>
+            function openModal(product) {
+                var modal = document.getElementById("modal");
+                var img = document.getElementById("modal-image");
+                var caption = document.getElementById("caption");
+
+                if (product === "cafe") {
+                    img.src = "images/cafet.jpg";
+                    caption.innerHTML = "Café Orgánico producido por los campesinos de Angostura. Precio: $35,000. Elaborado con los mejores granos de la región.";
+                } else if (product === "miel") {
+                    img.src = "images/mielp.jpg";
+                    caption.innerHTML = "Miel natural de las mejores flores. Precio: $25,000. 100% pura y sin aditivos.";
+                } else if (product === "chocolate") {
+                    img.src = "images/vinoc.png";
+                    caption.innerHTML = "Vino artesanal hecho con café de la región. Precio: $30,000. Delicioso y sin conservantes.";
+                } else if (product === "campo") {
+                    img.src = "images/sana.jpg";
+                    caption.innerHTML = "Producto Artesanal. Precio: Depende de las und. Calidad garantizada directamente del campo.";
+                } else if (product === "artesanias") {
+                    img.src = "images/cafes.jpg";
+                    caption.innerHTML = "Vino Artesanal creadas con la técnica tradicional. Precio: $40,000. Hechas a mano por los artesanos de la región.";
+                } else if (product === "decoracion") {
+                    img.src = "images/jabon.jpg";
+                    caption.innerHTML = "Jabon Artesanal echo de las mejores semillas de cacao,  especial para dejar una piel suave y fresca. Precio: $10,000. Und, Ideal para tu hogar.";
+                }
+
+                modal.style.display = "block";
+            }
+
+            function closeModal() {
+                document.getElementById("modal").style.display = "none";
+            }
+        </script>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
