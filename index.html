@@ -10,10 +10,135 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+
 	</head>
 	<body class="is-preload">
 
 		<style>
+
+
+
+
+/* Contenedor general */
+#history .row {
+    display: flex;
+    flex-wrap: wrap; /* Permitir múltiples filas */
+    gap: 20px; /* Espacio entre los artículos */
+    justify-content: space-between; /* Distribuir los productos horizontalmente */
+}
+
+/* Artículos individuales */
+#history .col-4 {
+    flex: 0 1 calc(33.333% - 20px); /* Ocupa un tercio del ancho del contenedor */
+    box-sizing: border-box; /* Asegura que padding y bordes no afecten el tamaño */
+}
+
+/* Artículos individuales: estilo */
+#history .item {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    background: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#history .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Imágenes */
+#history .item img {
+    width: 100%;
+    height: 320px;
+	object-fit: cover; /* Ajusta la imagen al contenedor */
+}
+
+/* Encabezado de los artículos */
+#history .item header {
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Encabezado principal */
+#history header h2 {
+    font-size: 2rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Descripción */
+#history p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+/* General para el encabezado */
+.hero-text {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    color: white; /* Asegura que el texto sea visible */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para contraste */
+}
+
+/* Fondo translúcido detrás del texto */
+.hero-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Fondo translúcido negro */
+    border-radius: 10px;
+    z-index: -1; /* Para que no tape el texto */
+}
+
+/* Título del encabezado */
+.hero-text h2 {
+    font-size: 2rem; /* Ajusta según el diseño */
+    line-height: 1.5;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Párrafo */
+.hero-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: normal;
+    margin: 0;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
+
+
+
+
             /* Estilo para la ventana modal0 de imagen */
             .modal {
                 display: none;
@@ -21,6 +146,7 @@
                 z-index: 1;
                 padding-top: 100px;
                 left: 0;
+				object-fit: contain; /* Asegura que las proporciones originales se mantengan */
                 top: 0;
                 width: 100%;
                 height: 100%;
@@ -28,6 +154,7 @@
                 background-color: rgba(0, 0, 0, 0.8);
             }
             .modal-content {
+				object-fit: contain; /* Asegura que las proporciones originales se mantengan */
                 margin: auto;
                 display: block;
                 max-width: 80%;
@@ -170,10 +297,12 @@
 					<section id="top" class="one dark cover">
 						<div class="container">
 
-							<header>
-								<h2 class="alt">Bienvenidos a la pagina donde podras encontrar productos artesanales de la mejor calidad, traidos directamente desde el campo</h2>
-								<p>Desde nuestras tierras, los campesinos creamos productos de calidad,<br> como vino, café, miel, jabón de cacao, entre otros. Todos elaborados con esfuerzo y dedicación.</p>
+							<header class="hero-text text-center">
+								<h2 class="alt">Bienvenidos a la página donde podrás encontrar productos artesanales de la mejor calidad, traídos directamente desde el campo</h2>
+								<p>Desde nuestras tierras, los campesinos creamos productos de calidad, 
+									como vino, café, miel, jabón de cacao, entre otros. Todos elaborados con esfuerzo y dedicación.</p>
 							</header>
+							
 							<footer>
 								<a href="#about" class="button scrolly">Descubre nuestra historia</a>
 							</footer>
@@ -195,17 +324,23 @@
 							<h2>Productos Artesanales</h2>
 						</header>
 						<p>Descubre una variedad de productos hechos a mano que combinan tradición y calidad.</p>
-	
+				
 						<div class="row">
 							<div class="col-4 col-12-mobile">
 								<article class="item">
-									<a href="#!" class="image fit" onclick="openModal('cafe')"><img src="images/cafet.jpg" alt="Café Gourmet" /></a>
+									<a href="#!" class="image fit" onclick="openModal('cafe')">
+										<img src="images/cafet.jpg" alt="Café Gourmet" />
+									</a>
 									<header>
 										<h3>Café Orgánico</h3>
 									</header>
 								</article>
+							</div>
+							<div class="col-4 col-12-mobile">
 								<article class="item">
-									<a href="#!" class="image fit" onclick="openModal('miel')"><img src="images/mielp.jpg" alt="Miel Natural" /></a>
+									<a href="#!" class="image fit" onclick="openModal('miel')">
+										<img src="images/mielo.png" alt="Miel Natural" />
+									</a>
 									<header>
 										<h3>Miel Natural</h3>
 									</header>
@@ -213,13 +348,19 @@
 							</div>
 							<div class="col-4 col-12-mobile">
 								<article class="item">
-									<a href="#!" class="image fit" onclick="openModal('chocolate')"><img src="images/vinoc.png" alt="Vino Artesanal" /></a>
+									<a href="#!" class="image fit" onclick="openModal('chocolate')">
+										<img src="images/vinoc.png" alt="Vino Artesanal" />
+									</a>
 									<header>
 										<h3>Vino Artesanal</h3>
 									</header>
 								</article>
+							</div>
+							<div class="col-4 col-12-mobile">
 								<article class="item">
-									<a href="#!" class="image fit" onclick="openModal('campo')"><img src="images/sana.jpg" alt="Productos de Campo" /></a>
+									<a href="#!" class="image fit" onclick="openModal('campo')">
+										<img src="images/sanad.png" alt="Productos de Campo" />
+									</a>
 									<header>
 										<h3>Productos de Campo para calmar dolores</h3>
 									</header>
@@ -227,45 +368,83 @@
 							</div>
 							<div class="col-4 col-12-mobile">
 								<article class="item">
-									<a href="#!" class="image fit" onclick="openModal('artesanias')"><img src="images/cafes.jpg" alt="Artesanías Locales" /></a>
+									<a href="#!" class="image fit" onclick="openModal('artesanias')">
+										<img src="images/morasana.png" alt="Artesanías Locales" />
+									</a>
 									<header>
-										<h3>Vino Artesanal</h3>
+										<h3>Artesanías Locales</h3>
 									</header>
 								</article>
+							</div>
+							<div class="col-4 col-12-mobile">
 								<article class="item">
-									<a href="#!" class="image fit" onclick="openModal('decoracion')"><img src="images/jabon.jpg" alt="Decoración Rústica" /></a>
+									<a href="#!" class="image fit" onclick="openModal('decoracion')">
+										<img src="images/jabon.jpg" alt="Decoración Rústica" />
+									</a>
 									<header>
 										<h3>Jabón Artesanal de Cacao</h3>
 									</header>
 								</article>
 							</div>
 						</div>
-	
 					</div>
 				</section>
+				
 				<!-- About Me -->
-<section id="about" class="three">
-    <div class="container">
+                <section id="about" class="three">
+                    <div class="container">
+                
+                        <header>
+                            <h2>Historia de Angostura y sus productos</h2>
+                        </header>
+                
+                        <!-- Carrusel de imágenes -->
+                        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <!-- Primera imagen con texto -->
+                                <div class="carousel-item active">
+                                    <img src="images/cultivocaña.jpg" class="d-block w-100" alt="Cultivo de caña" style="height: 400px; object-fit: cover;">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <p>Los cultivos de caña en Angostura son un símbolo del esfuerzo campesino y la producción artesanal.</p>
+                                    </div>
+                                </div>
+                
+                                <!-- Segunda imagen con texto -->
+                                <div class="carousel-item">
+                                    <img src="images/ganado.jpg" class="d-block w-100" alt="Ganadería" style="height: 400px; object-fit: cover;">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <p>La ganadería local es una fuente importante de ingresos para las familias de la región.</p>
+                                    </div>
+                                </div>
+                
+                                <!-- Tercera imagen con texto -->
+                                <div class="carousel-item">
+                                    <img src="images/cogercafe.jpg" class="d-block w-100" alt="Cosecha de café" style="height: 400px; object-fit: cover;">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <p>El café cultivado en las montañas de Angostura es reconocido por su calidad y sabor inigualable.</p>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Controles del carrusel -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                
+                        <!-- Texto adicional debajo del carrusel -->
+                        <p>
+                            <h4>Angostura es un pequeño municipio en Antioquia, Colombia, conocido por la dedicación de sus campesinos que cultivan productos naturales con métodos tradicionales. Desde el café de la mejor calidad hasta las mieles y jabones, cada producto refleja el esfuerzo y la pasión por la tierra. En este hermoso lugar, los campesinos luchan por salir adelante, llevando sus productos a todo el país con orgullo.</h4>
+                        </p>
+                
+                    </div>
+                </section>
 
-        <header>
-            <h2>Historia de Angostura y sus productos</h2>
-        </header>
-
-        <div class="image-container">
-            <a href="#" class="image featured">
-                <img src="images/campo.jpg" alt="About me image" />
-            </a>
-        </div>
-
-        <p><h4>Angostura es un pequeño municipio en Antioquia,
-           Colombia, conocido por la dedicación de sus campesinos
-           que cultivan productos naturales con métodos tradicionales.
-           Desde el café de la mejor calidad hasta las mieles y jabones, cada producto refleja el esfuerzo y la pasión por la tierra. En este hermoso lugar, los campesinos luchan por salir adelante,
-           llevando sus productos a todo el país con orgullo.</h4>
-        </p>
-
-    </div>
-</section>
 
 
 				<!-- Contact -->
@@ -318,16 +497,16 @@
                     img.src = "images/cafet.jpg";
                     caption.innerHTML = "Café Orgánico producido por los campesinos de Angostura. Precio: $35,000. Elaborado con los mejores granos de la región.";
                 } else if (product === "miel") {
-                    img.src = "images/mielp.jpg";
+                    img.src = "images/mielo.png";
                     caption.innerHTML = "Miel natural de las mejores flores. Precio: $25,000. 100% pura y sin aditivos.";
                 } else if (product === "chocolate") {
                     img.src = "images/vinoc.png";
                     caption.innerHTML = "Vino artesanal hecho con café de la región. Precio: $30,000. Delicioso y sin conservantes.";
                 } else if (product === "campo") {
-                    img.src = "images/sana.jpg";
+                    img.src = "images/sanad.png";
                     caption.innerHTML = "Producto Artesanal. Precio: Depende de las und. Calidad garantizada directamente del campo.";
                 } else if (product === "artesanias") {
-                    img.src = "images/cafes.jpg";
+                    img.src = "images/morasana.png";
                     caption.innerHTML = "Vino Artesanal creadas con la técnica tradicional. Precio: $40,000. Hechas a mano por los artesanos de la región.";
                 } else if (product === "decoracion") {
                     img.src = "images/jabon.jpg";
