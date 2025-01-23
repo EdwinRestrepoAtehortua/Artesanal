@@ -1,0 +1,374 @@
+/* Contenedor general */
+#history .row {
+    display: flex;
+    flex-wrap: wrap; /* Permitir múltiples filas */
+    gap: 20px; /* Espacio entre los artículos */
+    justify-content: space-between; /* Distribuir los productos horizontalmente */
+}
+
+/* Artículos individuales */
+#history .col-4 {
+    flex: 0 1 calc(33.333% - 20px); /* Ocupa un tercio del ancho del contenedor */
+    box-sizing: border-box; /* Asegura que padding y bordes no afecten el tamaño */
+}
+
+/* Artículos individuales: estilo */
+#history .item {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    background: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#history .item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Imágenes */
+#history .item img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover; /* Ajusta la imagen al contenedor */
+}
+
+/* Encabezado de los artículos */
+#history .item header {
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Encabezado principal */
+#history header h2 {
+    font-size: 2rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Descripción */
+#history p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* General para el encabezado */
+.hero-text {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    color: white; /* Asegura que el texto sea visible */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para contraste */
+}
+
+.hero-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Fondo translúcido negro */
+    border-radius: 10px;
+    z-index: -1; /* Para que no tape el texto */
+}
+
+.hero-text h2 {
+    font-size: 2rem; /* Ajusta según el diseño */
+    line-height: 1.5;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-weight: normal;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
+
+/* Estilo para la ventana modal de imagen */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    object-fit: contain; /* Asegura que las proporciones originales se mantengan */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain; /* Asegura que las proporciones originales se mantengan */
+}
+
+#caption {
+    text-align: center;
+    color: rgb(248, 242, 242);
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fdf9f9;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo para la sección de "Sobre nosotros" */
+#about .container {
+    text-align: center; /* Centra el texto y los elementos */
+    padding: 20px; /* Espaciado interno */
+}
+
+#about .image-container {
+    margin-bottom: 20px; /* Espacio entre la imagen y el texto */
+}
+
+#about .image.featured img {
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    height: 200px; /* Fija la altura */
+    object-fit: cover; /* Recorta la imagen para que se ajuste sin distorsión */
+    border-radius: 10px; /* Opcional: bordes redondeados para mejor estética */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera para destacar la imagen */
+}
+
+#about p {
+    text-align: justify; /* Alinea el texto para una mejor lectura */
+    margin: 0 auto; /* Centra el texto horizontalmente */
+    max-width: 800px; /* Limita el ancho del párrafo */
+    line-height: 1.6; /* Espaciado entre líneas para mejorar legibilidad */
+    font-size: 1rem; /* Tamaño de fuente estándar */
+}
+
+.container {
+    color: #2a2929;
+    font-family: 'Roboto Slab', serif; /* Fuente más ancha y bonita */
+}
+
+/* Estilo para los íconos de contacto */
+.contact-icons a {
+    font-size: 30px;
+    margin: 10px;
+    color: #4f4d4d;
+}
+
+.contact {
+    color: #f89d9d;
+    background-color: #fffcfc;
+}
+
+.contact-icons a:hover {
+    color: #f89d9d;
+}
+
+/* Estilo para el grid de productos */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-item {
+    flex: 1 1 calc(33.333% - 20px); /* Para tres columnas en escritorio */
+    box-sizing: border-box;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .product-item {
+        flex: 1 1 calc(50% - 20px); /* Para dos columnas en tablets y móviles grandes */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-item {
+        flex: 1 1 100%; /* Para una columna en móviles pequeños */
+    }
+}
+
+
+
+
+
+
+
+
+/* Contenedor general de la sección */
+section.three {
+    padding: 2rem 0;
+    background-color: #f9f9f9;
+}
+
+section.three .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section.three header h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Estilos para la cuadrícula */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 1rem;
+}
+
+/* Estilo de cada producto */
+.product-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen de cada producto */
+.product-item .image.fit img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-item:hover .image.fit img {
+    transform: scale(1.05);
+}
+
+/* Título del producto */
+.product-item h3 {
+    font-size: 1.2rem;
+    color: #444;
+    margin: 1rem 0;
+    font-weight: bold;
+    padding: 0 1rem;
+}
+
+
+
+
+
+
+
+/* Estilo general del carrusel */
+#carouselExample {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Esquinas redondeadas para las imágenes del carrusel */
+.carousel-item img {
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.carousel-item img:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el cursor */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra atractiva al hacer hover */
+}
+
+/* Texto del carrusel (siempre visible y legible) */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    max-width: 70%; /* Limita el ancho del texto */
+    margin: 0 auto;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .carousel-caption {
+        font-size: 0.9rem;
+        max-width: 90%;
+    }
+}
+
+/* Botones del carrusel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para los botones */
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: background-color 0.3s ease;
+}
+
+
+
+#logo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#logo .avatar48 img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%; /* Esquinas redondeadas para un diseño más atractivo */
+    border: 2px solid #ccc; /* Borde alrededor de la imagen */
+    border: none; /* Quita el borde */
+    object-fit: cover;
+}

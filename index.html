@@ -14,221 +14,12 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-
+<link rel="stylesheet" href="assets/css/custom.css" />
 
 	</head>
 	<body class="is-preload">
 
-		<style>
-
-
-
-
-/* Contenedor general */
-#history .row {
-    display: flex;
-    flex-wrap: wrap; /* Permitir múltiples filas */
-    gap: 20px; /* Espacio entre los artículos */
-    justify-content: space-between; /* Distribuir los productos horizontalmente */
-}
-
-/* Artículos individuales */
-#history .col-4 {
-    flex: 0 1 calc(33.333% - 20px); /* Ocupa un tercio del ancho del contenedor */
-    box-sizing: border-box; /* Asegura que padding y bordes no afecten el tamaño */
-}
-
-/* Artículos individuales: estilo */
-#history .item {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-    background: #fff;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-#history .item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Imágenes */
-#history .item img {
-    width: 100%;
-    height: 320px;
-	object-fit: cover; /* Ajusta la imagen al contenedor */
-}
-
-/* Encabezado de los artículos */
-#history .item header {
-    padding: 10px;
-    font-size: 1rem;
-    color: #333;
-}
-
-/* Encabezado principal */
-#history header h2 {
-    font-size: 2rem;
-    color: #555;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* Descripción */
-#history p {
-    text-align: center;
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-
-
-
-
-/* General para el encabezado */
-.hero-text {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    color: white; /* Asegura que el texto sea visible */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para contraste */
-}
-
-/* Fondo translúcido detrás del texto */
-.hero-text::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Fondo translúcido negro */
-    border-radius: 10px;
-    z-index: -1; /* Para que no tape el texto */
-}
-
-/* Título del encabezado */
-.hero-text h2 {
-    font-size: 2rem; /* Ajusta según el diseño */
-    line-height: 1.5;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-/* Párrafo */
-.hero-text p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    font-weight: normal;
-    margin: 0;
-}
-
-/* Ajuste responsivo */
-@media (max-width: 768px) {
-    .hero-text h2 {
-        font-size: 1.5rem;
-    }
-
-    .hero-text p {
-        font-size: 1rem;
-    }
-}
-
-
-
-
-            /* Estilo para la ventana modal0 de imagen */
-            .modal {
-                display: none;
-                position: fixed;
-                z-index: 1;
-                padding-top: 100px;
-                left: 0;
-				object-fit: contain; /* Asegura que las proporciones originales se mantengan */
-                top: 0;
-                width: 100%;
-                height: 100%;
-                overflow: auto;
-                background-color: rgba(0, 0, 0, 0.8);
-            }
-            .modal-content {
-				object-fit: contain; /* Asegura que las proporciones originales se mantengan */
-                margin: auto;
-                display: block;
-                max-width: 80%;
-                max-height: 80%;
-            }
-            #caption {
-                text-align: center;
-                color: rgb(248, 242, 242);
-                font-size: 20px;
-                margin-top: 10px;
-            }
-            .close {
-                position: absolute;
-                top: 15px;
-                right: 35px;
-                color: #fdf9f9;
-                font-size: 40px;
-                font-weight: bold;
-                transition: 0.3s;
-            }
-            .close:hover,
-            .close:focus {
-                color: #bbb;
-                text-decoration: none;
-                cursor: pointer;
-            }
-
-           /* Estilo para la sección de "Sobre nosotros" */
-#about .container {
-    text-align: center; /* Centra el texto y los elementos */
-    padding: 20px; /* Espaciado interno */
-}
-
-#about .image-container {
-    margin-bottom: 20px; /* Espacio entre la imagen y el texto */
-}
-
-#about .image.featured img {
-    width: 100%; /* Ajusta el ancho al 100% del contenedor */
-    height: 200px; /* Fija la altura */
-    object-fit: cover; /* Recorta la imagen para que se ajuste sin distorsión */
-    border-radius: 10px; /* Opcional: bordes redondeados para mejor estética */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera para destacar la imagen */
-}
-
-#about p {
-    text-align: justify; /* Alinea el texto para una mejor lectura */
-    margin: 0 auto; /* Centra el texto horizontalmente */
-    max-width: 800px; /* Limita el ancho del párrafo */
-    line-height: 1.6; /* Espaciado entre líneas para mejorar legibilidad */
-    font-size: 1rem; /* Tamaño de fuente estándar */
-}
-
-            
-
-            .container {
-             color: #2a2929;
-            font-family: 'Roboto Slab', serif; /* Fuente más ancha y bonita */
-            }
-
-            /* Estilo para los íconos de contacto */
-            .contact-icons a {
-                font-size: 30px;
-                margin: 10px;
-                color: #4f4d4d;
-            }
-            .contact{
-				color: #f89d9d;
-				background-color: #fffcfc;
-			}
-            .contact-icons a:hover {
-                color: #f89d9d;
-            }
-        </style>
+		
 
 		<!-- Header -->
 			<div id="header">
@@ -236,12 +27,14 @@
 				<div class="top">
 
 					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-							<h1 id="title"> 
-								Artesanales</h1>
-							<p>Del campo a tu mesa</p>
-						</div>
+<div id="logo">
+    <!--<span class="image avatar48">
+        <img src="images/avatar.jpg" alt="Logo Artesanales" />
+    </span>-->
+    <h1 id="title">Artesanales</h1>
+    <p>Del campo a tu mesa</p>
+</div>
+
 
 					<!-- Nav -->
 					<nav id="nav">
@@ -318,78 +111,85 @@
 					</div>
 
 				<!-- Portafolio de Productos -->
-				<section id="history" class="three">
-					<div class="container">
-						<header>
-							<h2>Productos Artesanales</h2>
-						</header>
-						<p>Descubre una variedad de productos hechos a mano que combinan tradición y calidad.</p>
-				
-						<div class="row">
-							<div class="col-4 col-12-mobile">
-								<article class="item">
-									<a href="#!" class="image fit" onclick="openModal('cafe')">
-										<img src="images/cafet.jpg" alt="Café Gourmet" />
-									</a>
-									<header>
-										<h3>Café Orgánico</h3>
-									</header>
-								</article>
-							</div>
-							<div class="col-4 col-12-mobile">
-								<article class="item">
-									<a href="#!" class="image fit" onclick="openModal('miel')">
-										<img src="images/mielo.png" alt="Miel Natural" />
-									</a>
-									<header>
-										<h3>Miel Natural</h3>
-									</header>
-								</article>
-							</div>
-							<div class="col-4 col-12-mobile">
-								<article class="item">
-									<a href="#!" class="image fit" onclick="openModal('chocolate')">
-										<img src="images/vinoc.png" alt="Vino Artesanal" />
-									</a>
-									<header>
-										<h3>Vino Artesanal</h3>
-									</header>
-								</article>
-							</div>
-							<div class="col-4 col-12-mobile">
-								<article class="item">
-									<a href="#!" class="image fit" onclick="openModal('campo')">
-										<img src="images/sanad.png" alt="Productos de Campo" />
-									</a>
-									<header>
-										<h3>Productos de Campo para calmar dolores</h3>
-									</header>
-								</article>
-							</div>
-							<div class="col-4 col-12-mobile">
-								<article class="item">
-									<a href="#!" class="image fit" onclick="openModal('artesanias')">
-										<img src="images/morasana.png" alt="Artesanías Locales" />
-									</a>
-									<header>
-										<h3>Artesanías Locales</h3>
-									</header>
-								</article>
-							</div>
-							<div class="col-4 col-12-mobile">
-								<article class="item">
-									<a href="#!" class="image fit" onclick="openModal('decoracion')">
-										<img src="images/jabon.jpg" alt="Decoración Rústica" />
-									</a>
-									<header>
-										<h3>Jabón Artesanal de Cacao</h3>
-									</header>
-								</article>
-							</div>
-						</div>
-					</div>
-				</section>
-				
+<section id="history" class="three">
+    <div class="container">
+        <header>
+            <h2>Productos Artesanales</h2>
+        </header>
+        <p>Descubre una variedad de productos hechos a mano que combinan tradición y calidad.</p>
+
+        <!-- Contenedor de productos -->
+        <div class="product-grid">
+            <!-- Producto 1 -->
+            <div class="product-item">
+                <a href="#!" class="image fit" onclick="openModal('cafe')">
+                    <img src="images/cafet.jpg" alt="Café Gourmet" />
+                </a>
+                <h3>Café Orgánico</h3>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-item">
+                <a href="#!" class="image fit" onclick="openModal('miel')">
+                    <img src="images/mielo.png" alt="Miel Natural" />
+                </a>
+                <h3>Miel Natural</h3>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-item">
+                <a href="#!" class="image fit" onclick="openModal('chocolate')">
+                    <img src="images/vinoc.png" alt="Vino Artesanal" />
+                </a>
+                <h3>Vino Artesanal</h3>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-item">
+                <a href="#!" class="image fit" onclick="openModal('campo')">
+                    <img src="images/sanad.png" alt="Productos de Campo" />
+                </a>
+                <h3>Productos de Campo para calmar dolores</h3>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="product-item">
+                <a href="#!" class="image fit" onclick="openModal('artesanias')">
+                    <img src="images/morasana.png" alt="Artesanías Locales" />
+                </a>
+                <h3>Artesanías Locales</h3>
+            </div>
+
+            <!-- Producto 6 -->
+            <div class="product-item">
+                <a href="#!" class="image fit" onclick="openModal('decoracion')">
+                    <img src="images/jabon.jpg" alt="Decoración Rústica" />
+                </a>
+                <h3>Jabón Artesanal de Cacao</h3>
+            </div>
+
+            <!-- Producto 7 -->
+            <div class="product-item">
+                <a href="#!" class="image fit" onclick="openModal('serranito')">
+                    <img src="images/serranito.png" alt="Decoración Rústica" />
+                </a>
+                <h3>Chocolate de mesa con azucar</h3>
+            </div>
+
+			<!-- Producto 8 -->
+            <div class="product-item">
+                <a href="#!" class="image fit" onclick="openModal('mycocoa')">
+                    <img src="images/mycocoa.png" alt="Decoración Rústica" />
+                </a>
+                <h3>Chocolate de mesa sin azucar</h3>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+						
 				<!-- About Me -->
                 <section id="about" class="three">
                     <div class="container">
@@ -416,6 +216,15 @@
                                         <p>La ganadería local es una fuente importante de ingresos para las familias de la región.</p>
                                     </div>
                                 </div>
+
+ <!-- cuarta imagen con texto -->
+ <div class="carousel-item">
+	<img src="images/sat.jpg" class="d-block w-100" alt="Ganadería" style="height: 400px; object-fit: cover;">
+	<div class="carousel-caption d-none d-md-block">
+		<p>La ganadería local es una fuente importante de ingresos para las familias de la región.</p>
+	</div>
+</div>
+
                 
                                 <!-- Tercera imagen con texto -->
                                 <div class="carousel-item">
@@ -511,6 +320,12 @@
                 } else if (product === "decoracion") {
                     img.src = "images/jabon.jpg";
                     caption.innerHTML = "Jabon Artesanal echo de las mejores semillas de cacao,  especial para dejar una piel suave y fresca. Precio: $10,000. Und, Ideal para tu hogar.";
+                } else if (product === "serranito") {
+                    img.src = "images/serranito.png";
+                    caption.innerHTML = "Chocolate de mesa con azucar.";
+                }else if (product === "mycocoa") {
+                    img.src = "images/mycocoa.png";
+                    caption.innerHTML = "Chocolate de mesa sin azucar.";
                 }
 
                 modal.style.display = "block";
